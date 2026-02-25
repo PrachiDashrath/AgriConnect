@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="#F1F8E9">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="🛒 Buyer Registration\n(खरेदीदार नोंदणी)"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#2E7D32"
+        android:gravity="center"
+        android:paddingTop="20dp"
+        android:paddingBottom="28dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Full Name / नाम / नाव"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="#555555"
+        android:layout_marginBottom="4dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="20dp">
+
+        <EditText
+            android:id="@+id/etBuyerName"
+            android:layout_width="0dp"
+            android:layout_height="52dp"
+            android:layout_weight="1"
+            android:hint="Enter name"
+            android:inputType="textPersonName"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:textSize="16sp"
+            android:background="#FFFFFF"/>
+
+        <ImageButton
+            android:id="@+id/btnMicName"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="8dp"
+            android:src="@android:drawable/ic_btn_speak_now"
+            android:background="@android:color/transparent"
+            android:contentDescription="Voice input"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Contact Number / संपर्क नंबर / संपर्क क्रमांक"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="#555555"
+        android:layout_marginBottom="4dp"/>
+
+    <EditText
+        android:id="@+id/etBuyerContact"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:hint="Enter 10-digit number"
+        android:inputType="phone"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:textSize="16sp"
+        android:background="#FFFFFF"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="City (Location) / शहर / ठिकाण"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="#555555"
+        android:layout_marginBottom="4dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="40dp">
+
+        <EditText
+            android:id="@+id/etBuyerCity"
+            android:layout_width="0dp"
+            android:layout_height="52dp"
+            android:layout_weight="1"
+            android:hint="Enter city"
+            android:inputType="textCapWords"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:textSize="16sp"
+            android:background="#FFFFFF"/>
+
+        <ImageButton
+            android:id="@+id/btnMicCity"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="8dp"
+            android:src="@android:drawable/ic_btn_speak_now"
+            android:background="@android:color/transparent"
+            android:contentDescription="Voice input"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnSubmitBuyer"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="SUBMIT REGISTRATION"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#2E7D32"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:visibility="gone"/>
+
+</LinearLayout>

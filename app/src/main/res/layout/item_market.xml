@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    app:cardCornerRadius="15dp"
+    app:cardElevation="6dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="#FFFFFF">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tvMarketCropName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Mango"
+                android:textColor="#1B5E20"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvMarketGrade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#FFC107"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="4dp"
+                android:text="Grade A"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:layout_marginEnd="8dp"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tvMarketCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#E8F5E9"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="4dp"
+                android:text="Fruit"
+                android:textColor="#2E7D32"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvMarketLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="📍 Pune"
+            android:textColor="#757575"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#F9F9F9"
+            android:padding="8dp"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Inspector Note:"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:textColor="#555555"/>
+
+            <TextView
+                android:id="@+id/tvMarketFeedback"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="The quality is excellent and fresh."
+                android:textColor="#444444"
+                android:textSize="13sp"
+                android:textStyle="italic" /> </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginVertical="12dp"
+            android:background="#F0F0F0" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvMarketPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="₹120 /kg"
+                    android:textColor="#2E7D32"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvMarketQuantity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Available: 500 kg"
+                    android:textColor="#616161"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnBuyNow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#2E7D32"
+                android:text="BUY NOW"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

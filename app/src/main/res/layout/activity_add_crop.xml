@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8FBF8">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add New Crop / नवीन पीक जोडा"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#2E7D32"
+            android:layout_marginBottom="24dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Crop Name / पिकाचे नाव / फसल का नाम"
+            android:textColor="#555555"
+            android:textSize="14sp"
+            android:layout_marginBottom="4dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="16dp">
+
+            <EditText
+                android:id="@+id/etCropName"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="56dp"
+                android:hint="e.g. Wheat / गहू / गेहूँ"
+                android:padding="12dp"
+                android:background="@drawable/edit_text_bg"/>
+
+            <ImageButton
+                android:id="@+id/btnMicName"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@android:drawable/ic_btn_speak_now"
+                android:background="?attr/selectableItemBackgroundBorderless" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Category / वर्ग / श्रेणी"
+            android:textColor="#555555"
+            android:textSize="14sp"
+            android:layout_marginBottom="4dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="16dp">
+
+            <EditText
+                android:id="@+id/etCategory"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="56dp"
+                android:hint="e.g. Grain / धान्य / अनाज"
+                android:padding="12dp"
+                android:background="@drawable/edit_text_bg"/>
+
+            <ImageButton
+                android:id="@+id/btnMicCategory"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@android:drawable/ic_btn_speak_now"
+                android:background="?attr/selectableItemBackgroundBorderless" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Price / किंमत / कीमत (₹)"
+            android:textColor="#555555"
+            android:textSize="14sp"
+            android:layout_marginBottom="4dp"/>
+
+        <EditText
+            android:id="@+id/etPrice"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:hint="Price per kg"
+            android:inputType="numberDecimal"
+            android:padding="12dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/edit_text_bg"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quantity / प्रमाण / मात्रा (kg)"
+            android:textColor="#555555"
+            android:textSize="14sp"
+            android:layout_marginBottom="4dp"/>
+
+        <EditText
+            android:id="@+id/etQuantity"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:hint="Total kg"
+            android:inputType="number"
+            android:padding="12dp"
+            android:background="@drawable/edit_text_bg"/>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/btnAddCrop"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Submit / सादर करा / जमा करें"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="#2E7D32"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F1F8E9">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#2E7D32"
+            android:elevation="4dp"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:gravity="center_vertical">
+
+            <ImageButton
+                android:id="@+id/btnBack"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@android:drawable/ic_menu_revert"
+                app:tint="#FFFFFF" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="12dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Buyer Dashboard"
+                    android:textColor="#FFFFFF"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="खरेदीदार डॅशबोर्ड"
+                    android:textColor="#C8E6C9"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Main Menu"
+                    android:textColor="#333333"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="12dp"/>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/btnBuyCrops"
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp"
+                    android:layout_marginBottom="24dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:background="#FFFFFF">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🛒" android:textSize="48sp"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Buy Crops / पिके खरेदी करा" android:textStyle="bold" android:textColor="#2E7D32" android:textSize="20sp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Market Intelligence / बाजार माहिती"
+                    android:textColor="#333333"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="12dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+
+                    <LinearLayout
+                        android:id="@+id/btnBuyerDemand"
+                        android:layout_width="0dp"
+                        android:layout_height="110dp"
+                        android:layout_weight="1"
+                        android:layout_margin="4dp"
+                        android:background="@android:color/white"
+                        android:elevation="2dp"
+                        android:gravity="center"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="📊" android:textSize="28sp"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Demand" android:textStyle="bold" android:textSize="11sp"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/btnBuyerPrice"
+                        android:layout_width="0dp"
+                        android:layout_height="110dp"
+                        android:layout_weight="1"
+                        android:layout_margin="4dp"
+                        android:background="@android:color/white"
+                        android:elevation="2dp"
+                        android:gravity="center"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="💰" android:textSize="28sp"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Price" android:textStyle="bold" android:textSize="11sp"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/btnFraudDetect"
+                        android:layout_width="0dp"
+                        android:layout_height="110dp"
+                        android:layout_weight="1"
+                        android:layout_margin="4dp"
+                        android:background="@android:color/white"
+                        android:elevation="2dp"
+                        android:gravity="center"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🛡️" android:textSize="28sp"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Fraud Detection" android:textStyle="bold" android:textSize="10sp" android:gravity="center"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/btnChatbotCorner"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="24dp"
+        android:background="@android:drawable/btn_default"
+        android:backgroundTint="#2E7D32"
+        android:elevation="12dp"
+        android:padding="12dp"
+        android:scaleType="centerInside"
+        android:src="@android:drawable/stat_notify_chat"
+        app:tint="#FFFFFF" />
+
+</RelativeLayout>

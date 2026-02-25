@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.agriconnect">
+
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.RECOGNIZE_SPEECH" />
+        </intent>
+    </queries>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AgriConnect">
+        <activity
+            android:name=".FraudDetectionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DemandPredictionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ChatbotActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MarketPlaceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".WelcomeActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UserSelectionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FarmerDashboardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BuyerDashboardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".InspectorDashboardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FarmerFormActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".BuyerFormActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".InspectorFormActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".CropManagementActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AddCropActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BuyerCropsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CropDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".WeatherActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MarketPriceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GovtSchemeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FruitsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".VegetablesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GrainsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DairyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FarmerNotificationActivity"
+            android:exported="false" />
+    </application>
+
+</manifest>

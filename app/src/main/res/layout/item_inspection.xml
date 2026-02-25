@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    app:cardCornerRadius="12dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tvCropName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Crop Name"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Assign Grade:"
+            android:layout_marginTop="8dp"
+            android:textSize="12sp"/>
+        <Spinner
+            android:id="@+id/spinnerInspectorGrade"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@android:drawable/btn_dropdown"/>
+
+        <EditText
+            android:id="@+id/etInspectorFeedback"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter quality feedback..."
+            android:textSize="14sp"
+            android:layout_marginTop="8dp"
+            android:background="@android:drawable/editbox_background"
+            android:padding="10dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="12dp"
+            android:weightSum="2">
+
+            <Button
+                android:id="@+id/btnAccept"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="ACCEPT"
+                android:backgroundTint="#2E7D32"
+                android:layout_marginEnd="4dp"/>
+
+            <Button
+                android:id="@+id/btnReject"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="REJECT"
+                android:backgroundTint="#C62828"
+                android:layout_marginStart="4dp"/>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
