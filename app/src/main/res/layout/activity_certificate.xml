@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F1F5F1"
+    android:padding="20dp">
+
+    <LinearLayout
+        android:id="@+id/certificateRoot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/certificate_outer_border"
+        android:padding="30dp">
+
+        <!-- HEADER -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="AgriConnect"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#1B5E20" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Smart Farming • Trusted Quality"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            android:textColor="#424242"
+            android:paddingBottom="25dp" />
+
+        <!-- TITLE -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="QUALITY ASSURANCE CERTIFICATE"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#2E7D32"
+            android:paddingBottom="25dp" />
+
+        <!-- Certificate Info Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:paddingBottom="20dp">
+
+            <TextView
+                android:id="@+id/tvCertId"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Certificate No:"
+                android:textSize="14sp"
+                android:textColor="#212121" />
+
+            <TextView
+                android:id="@+id/tvIssueDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Date of Issue:"
+                android:textSize="14sp"
+                android:textColor="#212121"
+                android:textAlignment="viewEnd" />
+        </LinearLayout>
+
+        <!-- Farmer Info -->
+        <TextView
+            android:id="@+id/tvVillage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Village:"
+            android:textSize="16sp"
+            android:textColor="#212121"
+            android:paddingBottom="20dp" />
+
+        <!-- Crop Details -->
+        <TextView
+            android:id="@+id/tvCertifiedCrops"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Certified Crop:"
+            android:textColor="#212121"
+            android:paddingBottom="10dp" />
+
+        <TextView
+            android:id="@+id/tvInspectionDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Grade:"
+            android:textColor="#212121"
+            android:paddingBottom="6dp" />
+
+        <TextView
+            android:id="@+id/tvNextInspection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Inspector Note:"
+            android:textColor="#212121"
+            android:paddingBottom="30dp" />
+
+        <!-- Signature + Logo Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingBottom="30dp">
+
+            <!-- Signature Column -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvSignature"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="L.P.S. AgriConnect"
+                    android:textSize="20sp"
+                    android:textStyle="italic"
+                    android:fontFamily="cursive"
+                    android:textColor="#2E7D32"
+                    android:paddingBottom="6dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="______________________"
+                    android:textColor="#212121" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Quality Assurance Manager"
+                    android:textSize="14sp"
+                    android:textColor="#424242" />
+            </LinearLayout>
+
+            <!-- Circular Logo -->
+            <ImageView
+                android:id="@+id/imgSeal"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_marginStart="20dp"
+                android:scaleType="centerCrop"
+                android:clipToOutline="true"
+                android:src="@drawable/logocer" />
+
+        </LinearLayout>
+
+        <!-- Download Button -->
+        <Button
+            android:id="@+id/btnDownloadPdf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Download Certificate PDF"
+            android:backgroundTint="#2E7D32"
+            android:textColor="#FFFFFF" />
+
+    </LinearLayout>
+</ScrollView>

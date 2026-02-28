@@ -1,33 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Enhanced Government Schemes Screen - All IDs preserved -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:background="@color/white"
+    android:background="#F4F6F9"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="16dp">
+    android:layout_height="match_parent">
 
-    <!-- Toolbar/Header -->
+    <!-- Elevated Header with gradient feel -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/primary"
-        android:padding="16dp"
-        android:gravity="center_vertical">
+        android:background="#1B5E20"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingTop="48dp"
+        android:paddingBottom="20dp"
+        android:orientation="vertical"
+        android:elevation="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="📜"
+            android:textSize="28sp"
+            android:layout_marginBottom="6dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Government Schemes"
-            android:textSize="20sp"
+            android:textSize="22sp"
             android:textStyle="bold"
-            android:textColor="@color/white"/>
+            android:textColor="#FFFFFF"
+            android:letterSpacing="0.01"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Explore subsidies &amp; farmer benefits"
+            android:textSize="13sp"
+            android:textColor="#A5D6A7"
+            android:layout_marginTop="2dp"/>
     </LinearLayout>
 
-    <!-- RecyclerView for Schemes -->
+    <!-- RecyclerView -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvSchemes"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:paddingBottom="16dp"
         android:clipToPadding="false"/>
+
 </LinearLayout>

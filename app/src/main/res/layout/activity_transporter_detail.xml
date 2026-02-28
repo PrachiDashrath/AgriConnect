@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F4F7F4"> <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="6dp"
+        android:layout_marginBottom="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:background="#1B5E20"> <TextView
+            android:id="@+id/tvCompanyName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Company Name"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="6dp"/>
+
+            <TextView
+                android:id="@+id/tvVerified"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="✓ Verified Transporter / अधिकृत ट्रान्सपोर्टर"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="4dp"
+                android:background="#388E3C"
+                android:textColor="#FFFFFF"
+                android:visibility="gone"/>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardBusiness"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="3dp"
+        android:layout_marginBottom="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="18dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="संपर्क माहिती / संपर्क जानकारी / CONTACT"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="#1B5E20"
+                android:letterSpacing="0.05"
+                android:layout_marginBottom="14dp"/>
+
+            <TextView
+                android:id="@+id/tvOwnerName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Owner: "
+                android:textSize="16sp"
+                android:textColor="#333333"
+                android:layout_marginBottom="10dp"
+                android:drawableStart="@android:drawable/ic_menu_myplaces"
+                android:drawablePadding="12dp"
+                app:drawableTint="#666666"/>
+
+            <TextView
+                android:id="@+id/tvContact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="📞 "
+                android:textSize="16sp"
+                android:textColor="#1565C0"
+                android:textStyle="bold"
+                android:layout_marginBottom="10dp"
+                android:drawableStart="@android:drawable/ic_menu_call"
+                android:drawablePadding="12dp"
+                app:drawableTint="#1565C0"/>
+
+            <TextView
+                android:id="@+id/tvLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="📍 "
+                android:textSize="16sp"
+                android:textColor="#333333"
+                android:drawableStart="@android:drawable/ic_dialog_map"
+                android:drawablePadding="12dp"
+                app:drawableTint="#666666"/>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="3dp"
+        android:layout_marginBottom="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="18dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="वाहन तपशील / वाहन विवरण / VEHICLE"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="#1B5E20"
+                android:layout_marginBottom="14dp"/>
+
+            <TextView
+                android:id="@+id/tvVehicleType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="🚚 "
+                android:textSize="16sp"
+                android:textColor="#333333"
+                android:layout_marginBottom="10dp"
+                android:drawableStart="@android:drawable/ic_menu_directions"
+                android:drawablePadding="12dp"
+                app:drawableTint="#666666"/>
+
+            <TextView
+                android:id="@+id/tvPricePerKm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="💰 "
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#2E7D32"
+                android:background="#E8F5E9"
+                android:padding="10dp"/>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="2dp"
+        android:layout_marginBottom="24dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="18dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="व्यावसायिक तपशील / व्यापार विवरण / BUSINESS"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="#1B5E20"
+                android:layout_marginBottom="14dp"/>
+
+            <TextView
+                android:id="@+id/tvGstNo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="GST: "
+                android:textSize="14sp"
+                android:textColor="#666666"
+                android:layout_marginBottom="6dp"/>
+
+            <TextView
+                android:id="@+id/tvLicenseNo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="License: "
+                android:textSize="14sp"
+                android:textColor="#666666"
+                android:layout_marginBottom="6dp"/>
+
+            <TextView
+                android:id="@+id/tvTotalTrips"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Total Trips: "
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#455A64"/>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="20dp">
+
+        <Button
+            android:id="@+id/btnCall"
+            android:layout_width="0dp"
+            android:layout_height="54dp"
+            android:layout_weight="1"
+            android:text="Call"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:backgroundTint="#1565C0"
+            android:layout_marginEnd="6dp"
+            app:cornerRadius="12dp"/>
+
+        <Button
+            android:id="@+id/btnShare"
+            android:layout_width="0dp"
+            android:layout_height="54dp"
+            android:layout_weight="1"
+            android:text="Share"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:backgroundTint="#EF6C00"
+            android:layout_marginEnd="6dp"
+            app:cornerRadius="12dp"/>
+
+        <Button
+            android:id="@+id/btnBookNow"
+            android:layout_width="0dp"
+            android:layout_height="54dp"
+            android:layout_weight="1.2"
+            android:text="Book Now"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:backgroundTint="#2E7D32"
+            app:cornerRadius="12dp"/>
+    </LinearLayout>
+
+</LinearLayout>
+</ScrollView>

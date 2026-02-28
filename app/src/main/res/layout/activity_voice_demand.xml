@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D7FBCB">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Title -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="AgriConnect Voice Assistant"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="#2E7D32"
+            android:gravity="center"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Language Selection -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Language"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#1B5E20"
+            android:layout_marginBottom="8dp"/>
+
+        <Spinner
+            android:id="@+id/spinner_language"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@color/accentLight"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Dataset Info -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="#E8F5E9"
+            android:padding="12dp"
+            android:layout_marginBottom="16dp">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_vegetables"
+                android:layout_marginEnd="8dp"
+                app:tint="#2E7D32" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="9 vegetables available"
+                android:textSize="16sp"
+                android:textColor="#1B5E20"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <!-- Available Vegetables -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="> Available Vegetables:"
+            android:textSize="16sp"
+            android:textColor="#757575"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Input Method Selection -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="16dp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_voice"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="#E3F2FD">
+
+                    <ImageView
+                        android:id="@+id/mic_icon"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:src="@drawable/ic_arrow_right"
+                        app:tint="#2196F3" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Voice Input"
+                        android:textSize="14sp"
+                        android:textColor="#2196F3"
+                        android:textStyle="bold"
+                        android:layout_marginTop="8dp"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_manual"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="#FFF3E0">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:src="@drawable/ic_market"
+                        app:tint="#FF9800" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Type Manually"
+                        android:textSize="14sp"
+                        android:textColor="#FF9800"
+                        android:textStyle="bold"
+                        android:layout_marginTop="8dp"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <!-- Voice Input Section -->
+        <LinearLayout
+            android:id="@+id/layout_voice_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <Button
+                android:id="@+id/btn_speak"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="SPEAK"
+                android:textSize="18sp"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#2196F3"
+                android:layout_marginBottom="16dp"/>
+        </LinearLayout>
+
+        <!-- Manual Input Section -->
+        <LinearLayout
+            android:id="@+id/layout_manual_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Select Vegetable"
+                android:textSize="16sp"
+                android:textColor="#757575"
+                android:layout_marginBottom="8dp"/>
+
+            <Spinner
+                android:id="@+id/spinner_vegetable"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@color/green"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:id="@+id/tv_selected_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Model available for Beetroot in Ahmednagar"
+                android:textSize="14sp"
+                android:textColor="#4CAF50"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:id="@+id/tv_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Analyzing: Beetroot in Ahmednagar"
+                android:textSize="14sp"
+                android:textColor="#FF9800"
+                android:textStyle="italic"
+                android:layout_marginBottom="16dp"/>
+        </LinearLayout>
+
+        <!-- Get Predictions Button -->
+        <Button
+            android:id="@+id/btn_get_predictions"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Get Predictions"
+            android:textSize="16sp"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#4CAF50"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Progress Bar -->
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Result Text -->
+        <TextView
+            android:id="@+id/tv_result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#2E7D32"
+            android:gravity="center"
+            android:visibility="gone"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Predictions RecyclerView -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Daily Predictions"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#1B5E20"
+            android:layout_marginBottom="8dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_predictions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false"/>
+
+        <!-- Feature Badges -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="24dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Voice Enabled"
+                android:textSize="12sp"
+                android:textColor="#FFFFFF"
+                android:background="#4CAF50"
+                android:padding="8dp"
+                android:layout_margin="4dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ML-Powered"
+                android:textSize="12sp"
+                android:textColor="#FFFFFF"
+                android:background="#2196F3"
+                android:padding="8dp"
+                android:layout_margin="4dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="9 Crops"
+                android:textSize="12sp"
+                android:textColor="#FFFFFF"
+                android:background="#FF9800"
+                android:padding="8dp"
+                android:layout_margin="4dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

@@ -1,10 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FraudDetectionActivity">
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="#F5F5F5">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- Title -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rate the farmer's service"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- 🔎 Live Farmer Search -->
+    <AutoCompleteTextView
+        android:id="@+id/autoFarmerSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Search Farmer by Name"
+        android:completionThreshold="2"
+        android:padding="12dp"
+        android:background="@drawable/rating_border"
+        android:layout_marginBottom="24dp"/>
+
+    <!-- ⭐ Rating Box -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="40dp"
+        android:background="@drawable/rating_border"
+        android:layout_marginBottom="24dp">
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:stepSize="1.0"
+            android:progressTint="#FFD700"
+            android:progressBackgroundTint="#CCCCCC"
+            android:secondaryProgressTint="#FFD700"/>
+    </LinearLayout>
+
+    <!-- 🟢 Submit Rating -->
+    <Button
+        android:id="@+id/btnRateFarmer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Submit Rating"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#2E7D32"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Spacer to push Report button to bottom -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <!-- 🔴 Report Farmer -->
+    <Button
+        android:id="@+id/btnReportFarmer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Report Farmer"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#D32F2F"/>
+
+</LinearLayout>

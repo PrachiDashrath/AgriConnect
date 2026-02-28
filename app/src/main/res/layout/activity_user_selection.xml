@@ -1,122 +1,330 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="20dp"
-    android:gravity="center"
-    android:background="@color/primaryBackground">
+    android:background="@color/greenAccent"
+    android:fillViewport="true">
 
-    <!-- App Title -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="🌾 AgriConnect"
-        android:textSize="26sp"
-        android:textStyle="bold"
-        android:textColor="@color/textPrimary"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="8dp"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Select your role"
-        android:textSize="16sp"
-        android:textColor="@color/textSecondary"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="24dp"/>
-
-    <!-- Farmer Card -->
     <LinearLayout
-        android:id="@+id/btnFarmer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="16dp"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/card_bg"
-        android:gravity="center_vertical"
-        android:clickable="true"
-        android:focusable="true"
-        android:foreground="?attr/selectableItemBackground">
+        android:orientation="vertical"
+        android:paddingHorizontal="20dp"
+        android:paddingTop="52dp"
+        android:paddingBottom="36dp"
+        android:gravity="center_horizontal">
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="👨‍🌾 Farmer"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:textColor="@color/textPrimary"/>
+        <!-- ── Header ── -->
+        <ImageView
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:src="@drawable/ic_logo_leaf"
+            android:background="@drawable/logo_bg_circle"
+            android:padding="11dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="➜"
-            android:textSize="20sp"
-            android:textColor="@color/textSecondary"/>
-    </LinearLayout>
-
-    <!-- Buyer Card -->
-    <LinearLayout
-        android:id="@+id/btnBuyer"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="16dp"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/card_bg"
-        android:gravity="center_vertical"
-        android:clickable="true"
-        android:focusable="true"
-        android:foreground="?attr/selectableItemBackground">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="🛒 Buyer"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:textColor="@color/textPrimary"/>
+            android:text="AgriConnect"
+            android:textSize="32sp"
+            android:fontFamily="@font/montserrat_extrabold"
+            android:letterSpacing="0.04"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="14dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="➜"
-            android:textSize="20sp"
-            android:textColor="@color/textSecondary"/>
-    </LinearLayout>
+            android:text="Select Role  ·  भूमिका निवडा  ·  भूमिका चुनें"
+            android:textSize="13sp"
+            android:fontFamily="@font/montserrat_medium"
+            android:textColor="#A5D6A7"
+            android:letterSpacing="0.02"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="36dp" />
 
-    <!-- Inspector Card -->
-    <LinearLayout
-        android:id="@+id/btnInspector"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="16dp"
-        android:background="@drawable/card_bg"
-        android:gravity="center_vertical"
-        android:clickable="true"
-        android:focusable="true"
-        android:foreground="?attr/selectableItemBackground">
-
-        <TextView
-            android:layout_width="0dp"
+        <!-- ══════════════════════════════════════════
+             FARMER CARD  —  id: btnFarmer  (unchanged)
+             ══════════════════════════════════════════ -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="🕵️ Inspector"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:textColor="@color/textPrimary"/>
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="#00000000">
 
+            <LinearLayout
+                android:id="@+id/btnFarmer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="20dp"
+                android:background="@drawable/role_card_farmer">
+
+                <!-- Icon bubble -->
+                <FrameLayout
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:background="@drawable/role_icon_bg_farmer">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="👨‍🌾"
+                        android:textSize="28sp" />
+                </FrameLayout>
+
+                <!-- Text block -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="18dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Farmer Dept"
+                        android:textSize="18sp"
+                        android:fontFamily="@font/montserrat_extrabold"
+                        android:textColor="#1B5E20" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="शेतकरी विभाग  ·  किसान विभाग"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:textColor="#4CAF50"
+                        android:layout_marginTop="2dp" />
+                </LinearLayout>
+
+                <!-- Arrow -->
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@drawable/ic_arrow_right"
+                    app:tint="#2E7D32"
+                    android:alpha="0.6" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- ══════════════════════════════════════════
+             BUYER CARD  —  id: btnBuyer  (unchanged)
+             ══════════════════════════════════════════ -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="#00000000">
+
+            <LinearLayout
+                android:id="@+id/btnBuyer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="20dp"
+                android:background="@drawable/role_card_buyer">
+
+                <FrameLayout
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:background="@drawable/role_icon_bg_buyer">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="🛒"
+                        android:textSize="28sp" />
+                </FrameLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="18dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Buyer Dept"
+                        android:textSize="18sp"
+                        android:fontFamily="@font/montserrat_extrabold"
+                        android:textColor="#0D47A1" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="खरेदीदार विभाग  ·  खरीदार विभाग"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:textColor="#1976D2"
+                        android:layout_marginTop="2dp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@drawable/ic_arrow_right"
+                    app:tint="#1565C0"
+                    android:alpha="0.6" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- ══════════════════════════════════════════
+             INSPECTOR CARD  —  id: btnInspector  (unchanged)
+             ══════════════════════════════════════════ -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="#00000000">
+
+            <LinearLayout
+                android:id="@+id/btnInspector"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="20dp"
+                android:background="@drawable/role_card_inspector">
+
+                <FrameLayout
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:background="@drawable/role_icon_bg_inspector">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="🔍"
+                        android:textSize="28sp" />
+                </FrameLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="18dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Inspector Dept"
+                        android:textSize="18sp"
+                        android:fontFamily="@font/montserrat_extrabold"
+                        android:textColor="#4A148C" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="निरीक्षक विभाग  ·  निरीक्षक विभाग"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:textColor="#7B1FA2"
+                        android:layout_marginTop="2dp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@drawable/ic_arrow_right"
+                    app:tint="#6A1B9A"
+                    android:alpha="0.6" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- ══════════════════════════════════════════
+             TRANSPORT CARD  —  id: btnTransport  (unchanged)
+             ══════════════════════════════════════════ -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="#00000000">
+
+            <LinearLayout
+                android:id="@+id/btnTransport"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="20dp"
+                android:background="@drawable/role_card_transport">
+
+                <FrameLayout
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:background="@drawable/role_icon_bg_transport">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="🚛"
+                        android:textSize="28sp" />
+                </FrameLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="18dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Transport Dept"
+                        android:textSize="18sp"
+                        android:fontFamily="@font/montserrat_extrabold"
+                        android:textColor="#BF360C" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="वाहतूक विभाग  ·  परिवहन विभाग"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:textColor="#E64A19"
+                        android:layout_marginTop="2dp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@drawable/ic_arrow_right"
+                    app:tint="#E65100"
+                    android:alpha="0.6" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Footer note -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="➜"
-            android:textSize="20sp"
-            android:textColor="@color/textSecondary"/>
-    </LinearLayout>
+            android:layout_marginTop="12dp"
+            android:text="Tap your department to continue"
+            android:textSize="12sp"
+            android:fontFamily="@font/montserrat_medium"
+            android:textColor="#60FFFFFF"
+            android:letterSpacing="0.04" />
 
-</LinearLayout>
+    </LinearLayout>
+</ScrollView>

@@ -1,9 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <gradient
-        android:angle="135"
-        android:startColor="@color/gradientStart"
-        android:centerColor="@color/primary"
-        android:endColor="@color/gradientEnd"
-        android:type="linear" />
-</shape>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Base deep green -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#0D2B14" />
+        </shape>
+    </item>
+
+    <!-- Radial highlight top-center -->
+    <item>
+        <shape android:shape="oval">
+            <gradient
+                android:type="radial"
+                android:gradientRadius="200%"
+                android:centerX="0.5"
+                android:centerY="0.0"
+                android:startColor="#FFFFFF"
+                android:endColor="#001B5E20" />
+        </shape>
+    </item>
+
+    <!-- Primary diagonal gradient overlay -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:type="linear"
+                android:angle="150"
+                android:startColor="#CC1B5E20"
+                android:centerColor="#881A4E2A"
+                android:endColor="#330D2B14" />
+        </shape>
+    </item>
+
+</layer-list>

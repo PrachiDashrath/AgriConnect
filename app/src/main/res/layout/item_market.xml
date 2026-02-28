@@ -88,7 +88,8 @@
                 android:text="The quality is excellent and fresh."
                 android:textColor="#444444"
                 android:textSize="13sp"
-                android:textStyle="italic" /> </LinearLayout>
+                android:textStyle="italic" />
+        </LinearLayout>
 
         <View
             android:layout_width="match_parent"
@@ -96,10 +97,12 @@
             android:layout_marginVertical="12dp"
             android:background="#F0F0F0" />
 
+        <!-- Bottom Row -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -126,6 +129,16 @@
             </LinearLayout>
 
             <Button
+                android:id="@+id/btnViewCertificate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="View Certificate"
+                android:textSize="12sp"
+                android:backgroundTint="#093AA2"
+                android:textColor="@android:color/white"
+                android:layout_marginEnd="8dp" />
+
+            <Button
                 android:id="@+id/btnBuyNow"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -133,6 +146,9 @@
                 android:text="BUY NOW"
                 android:textColor="#FFFFFF"
                 android:textStyle="bold" />
+
         </LinearLayout>
+
     </LinearLayout>
+
 </androidx.cardview.widget.CardView>

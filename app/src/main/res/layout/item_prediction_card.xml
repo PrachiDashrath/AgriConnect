@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="2dp"
+    android:layout_marginBottom="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <!-- Date and Day Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="2024-01-01"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#000000"/>
+
+            <TextView
+                android:id="@+id/tv_day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Monday"
+                android:textSize="14sp"
+                android:textColor="#757575"/>
+        </LinearLayout>
+
+        <!-- Demand Value -->
+        <TextView
+            android:id="@+id/tv_demand"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Demand: 1500 units"
+            android:textSize="16sp"
+            android:textColor="#2E7D32"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp"/>
+
+        <!-- Confidence Range -->
+        <TextView
+            android:id="@+id/tv_confidence"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Range: 1425 - 1575 units"
+            android:textSize="14sp"
+            android:textColor="#757575"/>
+
+        <!-- Optional: Add a divider and price info if needed -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#E0E0E0"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:visibility="gone"/>
+
+        <!-- Price (optional - uncomment if you want to show price) -->
+        <!--
+        <TextView
+            android:id="@+id/tv_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Price: ₹45.50/kg"
+            android:textSize="14sp"
+            android:textColor="#F57C00"
+            android:visibility="gone"/>
+        -->
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

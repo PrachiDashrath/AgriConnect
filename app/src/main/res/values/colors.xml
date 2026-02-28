@@ -74,4 +74,11 @@
     <color name="blackOverlay">#80000000</color>
     <color name="whiteOverlay">#80FFFFFF</color>
     <color name="shadowColor">#33000000</color>
+
+
+    <color name="primaryGreen">#2E7D32</color>
+    <color name="darkGreen">#1B5E20</color>
+    <color name="lightSage">#F1F8E9</color>
+    <color name="hintGrey">#757575</color>
+
 </resources>

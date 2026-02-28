@@ -107,7 +107,7 @@ public class BuyerFormActivity extends AppCompatActivity {
                 Toast.makeText(BuyerFormActivity.this, "Profile Setup Complete!", Toast.LENGTH_SHORT).show();
 
                 // FIXED FLOW: Redirect to BuyerDashboardActivity
-                Intent intent = new Intent(BuyerFormActivity.this, BuyerDashboardActivity.class);
+                Intent intent = new Intent(BuyerFormActivity.this, MarketPlaceActivity.class);
 
                 // Clear the backstack so user can't back-button into the form again
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);

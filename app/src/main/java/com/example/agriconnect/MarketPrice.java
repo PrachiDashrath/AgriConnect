@@ -1,19 +1,34 @@
 package com.example.agriconnect;
 
+import java.io.Serializable;
 import com.google.firebase.database.IgnoreExtraProperties;
 
 @IgnoreExtraProperties
-public class MarketPrice {
-    // Variable names must match Firebase keys exactly
-    public String cropName, price, location, category, quantity, grade, inspectorFeedback, farmerName, farmerPhone;
+public class MarketPrice implements Serializable {
 
-    // Required empty constructor for Firebase
-    public MarketPrice() {}
+    public String cropName;
+    public String price;
+    public String quantity;
+    public String category;
+    public String grade;
+    public String inspectorFeedback;
+    public String name;       // This represents the Farmer's Name
+    public String location;
 
-    // Full constructor for the Inspector to use
-    public MarketPrice(String cropName, String price, String location, String category,
-                       String quantity, String grade, String inspectorFeedback,
-                       String farmerName, String farmerPhone) {
+    public MarketPrice() {
+        // Required for Firebase
+    }
+
+    // ✅ FIXED CONSTRUCTOR: Matches the order used in InspectorAdapter
+    public MarketPrice(String cropName,
+                       String price,
+                       String location,
+                       String category,
+                       String quantity,
+                       String grade,
+                       String inspectorFeedback,
+                       String name) {
+
         this.cropName = cropName;
         this.price = price;
         this.location = location;
@@ -21,18 +36,16 @@ public class MarketPrice {
         this.quantity = quantity;
         this.grade = grade;
         this.inspectorFeedback = inspectorFeedback;
-        this.farmerName = farmerName;
-        this.farmerPhone = farmerPhone;
+        this.name = name;
     }
 
-    // Getters for the Adapter to use
+    // Getters for RecyclerView and Adapters
     public String getCropName() { return cropName; }
     public String getPrice() { return price; }
-    public String getLocation() { return location; }
-    public String getCategory() { return category; }
     public String getQuantity() { return quantity; }
+    public String getCategory() { return category; }
     public String getGrade() { return grade; }
     public String getInspectorFeedback() { return inspectorFeedback; }
-    public String getFarmerName() { return farmerName; }
-    public String getFarmerPhone() { return farmerPhone; }
+    public String getName() { return name; }
+    public String getLocation() { return location; }
 }

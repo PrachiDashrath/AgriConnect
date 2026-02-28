@@ -1,38 +1,164 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="24dp"
-    android:gravity="center">
+    android:background="#F1F8E9"
+    android:fillViewport="true">
 
-    <EditText
-        android:id="@+id/registerEmail"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Email"
-        android:inputType="textEmailAddress"/>
+        android:orientation="vertical"
+        android:padding="28dp">
 
-    <EditText
-        android:id="@+id/registerPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Password"
-        android:inputType="textPassword"
-        android:layout_marginTop="12dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="32dp">
 
-    <EditText
-        android:id="@+id/registerConfirmPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Confirm Password"
-        android:inputType="textPassword"
-        android:layout_marginTop="12dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="खाते तयार करा / खाता बनाएँ"
+                android:textColor="#1B5E20"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/registerBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Register"
-        android:layout_marginTop="20dp"/>
-</LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Create Account"
+                android:textColor="#2E7D32"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilName"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="18dp"
+            android:hint="       पूर्ण नाव / पूरा नाम / Full Name"
+            app:boxStrokeColor="#2E7D32"
+            app:hintTextColor="#1B5E20"
+            app:startIconDrawable="@android:drawable/ic_menu_myplaces"
+            app:startIconTint="#2E7D32">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etFullName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:textColor="#212121" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilContact"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="18dp"
+            android:hint="       संपर्क क्रमांक / संपर्क नंबर / Contact"
+            app:boxStrokeColor="#2E7D32"
+            app:hintTextColor="#1B5E20"
+            app:startIconDrawable="@android:drawable/ic_menu_call"
+            app:startIconTint="#2E7D32">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etContactNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="phone" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilEmail"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="18dp"
+            android:hint="         ईमेल / ईमेल / Email"
+            app:boxStrokeColor="#2E7D32"
+            app:hintTextColor="#1B5E20"
+            app:startIconDrawable="@android:drawable/ic_dialog_email"
+            app:startIconTint="#2E7D32">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilPassword"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="18dp"
+            android:hint="        पासवर्ड / पासवर्ड / Password"
+            app:boxStrokeColor="#2E7D32"
+            app:hintTextColor="#1B5E20"
+            app:passwordToggleEnabled="true"
+            app:startIconDrawable="@android:drawable/ic_lock_lock"
+            app:startIconTint="#2E7D32">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilRole"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:hint="        भूमिका निवडा / भूमिका चुनें / Role"
+            app:boxStrokeColor="#2E7D32"
+            app:hintTextColor="#1B5E20"
+            app:startIconDrawable="@android:drawable/ic_menu_info_details"
+            app:startIconTint="#2E7D32">
+
+            <AutoCompleteTextView
+                android:id="@+id/roleDropdown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:inputType="none"
+                android:cursorVisible="false" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btnRegister"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:text="नोंदणी करा / पंजीकरण करें / Register"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:backgroundTint="#2E7D32"
+            app:cornerRadius="14dp"
+            android:elevation="4dp" />
+
+        <TextView
+            android:id="@+id/tvLoginRedirect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="24dp"
+            android:padding="10dp"
+            android:text="आधीच खाते आहे? लॉगिन करा\nपहले से ही एक खाता है? लॉगिन करें\nAlready have an account? Login"
+            android:textColor="#1B5E20"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textSize="13sp" />
+
+    </LinearLayout>
+</ScrollView>

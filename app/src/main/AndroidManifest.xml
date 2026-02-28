@@ -2,18 +2,23 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.agriconnect">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+
     <uses-feature
         android:name="android.hardware.telephony"
         android:required="false" />
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.RECORD_AUDIO" />
-    <uses-permission android:name="android.permission.SEND_SMS"/>
-
     <queries>
         <intent>
             <action android:name="android.intent.action.RECOGNIZE_SPEECH" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+
+            <data android:scheme="upi" />
         </intent>
     </queries>
 
@@ -25,17 +30,30 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AgriConnect">
         <activity
-            android:name=".FraudDetectionActivity"
+            android:name=".VoiceDemandActivity"
             android:exported="false" />
         <activity
-            android:name=".DemandPredictionActivity"
+            android:name=".activities.TransportTrackingActivity"
             android:exported="false" />
         <activity
-            android:name=".ChatbotActivity"
+            android:name=".activities.TransporterDetailActivity"
             android:exported="false" />
         <activity
-            android:name=".MarketPlaceActivity"
+            android:name=".activities.TransportCompanyListActivity"
             android:exported="false" />
+        <activity
+            android:name=".activities.TransportCompanyDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.TransportBookingFormActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.TransportBillActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CertificateActivity"
+            android:exported="false" />
+
         <activity
             android:name=".WelcomeActivity"
             android:exported="true">
@@ -76,10 +94,13 @@
             android:exported="false"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name=".CropManagementActivity"
+            android:name=".activities.TransporterRegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".AddCropActivity"
+            android:name=".MarketPlaceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MarketPriceActivity"
             android:exported="false" />
         <activity
             android:name=".BuyerCropsActivity"
@@ -88,13 +109,46 @@
             android:name=".CropDetailActivity"
             android:exported="false" />
         <activity
+            android:name=".CheckoutActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BillActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TransportListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FinalBillActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PaymentSuccessActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Order"
+            android:exported="false" />
+        <activity
+            android:name=".CropManagementActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AddCropActivity"
+            android:exported="false" />
+        <activity
             android:name=".WeatherActivity"
             android:exported="false" />
         <activity
-            android:name=".MarketPriceActivity"
+            android:name=".GovtSchemeActivity"
             android:exported="false" />
         <activity
-            android:name=".GovtSchemeActivity"
+            android:name=".FraudDetectionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DemandPredictionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ChatbotActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FarmerNotificationActivity"
             android:exported="false" />
         <activity
             android:name=".FruitsActivity"
@@ -107,9 +161,6 @@
             android:exported="false" />
         <activity
             android:name=".DairyActivity"
-            android:exported="false" />
-        <activity
-            android:name=".FarmerNotificationActivity"
             android:exported="false" />
     </application>
 

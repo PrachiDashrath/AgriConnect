@@ -1,6 +1,7 @@
 package com.example.agriconnect;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,22 +34,32 @@ public class BuyerAdapter extends RecyclerView.Adapter<BuyerAdapter.ViewHolder> 
     }
 
     @Override
+
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Crop crop = approvedList.get(position);
 
-        // Setting data from your Crop.java class
         holder.tvCropName.setText(crop.getCropName());
         holder.tvCategory.setText(crop.getCategory());
         holder.tvPrice.setText("₹" + crop.getPrice() + " /kg");
         holder.tvQuantity.setText("Available: " + crop.getQuantity() + " kg");
         holder.tvLocation.setText("📍 " + crop.getLocation());
 
+        // ✅ FIXED: Added Intent to redirect the user
         holder.btnBuy.setOnClickListener(v -> {
-            // Logic for buying or contacting the farmer
-            Toast.makeText(context, "Order placed for " + crop.getCropName(), Toast.LENGTH_SHORT).show();
+            // Replace 'OrderDetailsActivity' with the name of your target Activity
+            Intent intent = new Intent(context, BillActivity.class);
+
+            // Pass the crop data to the next screen so the buyer knows what they are buying
+            intent.putExtra("cropId", crop.getCropId());
+            intent.putExtra("cropName", crop.getCropName());
+            intent.putExtra("price", crop.getPrice());
+            intent.putExtra("farmerName", crop.getFarmerName());
+
+            context.startActivity(intent);
+
+            Toast.makeText(context, "Redirecting to order summary...", Toast.LENGTH_SHORT).show();
         });
     }
-
     @Override
     public int getItemCount() {
         return approvedList.size();

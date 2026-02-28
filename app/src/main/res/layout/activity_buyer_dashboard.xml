@@ -10,167 +10,280 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <!-- Header -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#2E7D32"
-            android:elevation="4dp"
-            android:orientation="horizontal"
-            android:padding="16dp"
-            android:gravity="center_vertical">
-
-            <ImageButton
-                android:id="@+id/btnBack"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:src="@android:drawable/ic_menu_revert"
-                app:tint="#FFFFFF" />
+            android:background="#1565C0"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingTop="40dp"
+            android:paddingBottom="24dp"
+            android:orientation="vertical"
+            android:elevation="4dp">
 
             <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <ImageButton
+                    android:id="@+id/btnBack"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@android:drawable/ic_menu_revert"
+                    app:tint="#FFFFFF" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="12dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Buyer Dashboard"
+                        android:textColor="#FFFFFF"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="खरेदीदार डॅशबोर्ड"
+                        android:textColor="#90CAF9"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🛒"
+                    android:textSize="34sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#4DFFFFFF"
+                android:layout_marginTop="16dp" />
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginStart="12dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Buyer Dashboard"
-                    android:textColor="#FFFFFF"
-                    android:textSize="22sp"
-                    android:textStyle="bold" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="खरेदीदार डॅशबोर्ड"
-                    android:textColor="#C8E6C9"
-                    android:textSize="12sp" />
-            </LinearLayout>
+                android:text="Browse and purchase fresh produce directly from farmers"
+                android:textSize="13sp"
+                android:textColor="#BBDEFB"
+                android:layout_marginTop="10dp" />
         </LinearLayout>
 
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:fillViewport="true">
+            android:fillViewport="true"
+            android:background="#F3F6FB">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="20dp">
+                android:padding="16dp"
+                android:paddingBottom="100dp">
 
+                <!-- Section: Quick Actions -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Main Menu"
-                    android:textColor="#333333"
-                    android:textSize="18sp"
+                    android:text="QUICK ACTIONS"
+                    android:textSize="11sp"
+                    android:textColor="#888888"
                     android:textStyle="bold"
-                    android:layout_marginBottom="12dp"/>
+                    android:letterSpacing="0.12"
+                    android:layout_marginBottom="10dp" />
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/btnBuyCrops"
                     android:layout_width="match_parent"
-                    android:layout_height="140dp"
+                    android:layout_height="88dp"
                     app:cardCornerRadius="12dp"
-                    app:cardElevation="6dp"
-                    android:layout_marginBottom="24dp"
-                    android:clickable="true"
-                    android:focusable="true"
+                    app:cardElevation="2dp"
+                    android:layout_marginBottom="10dp"
                     android:foreground="?attr/selectableItemBackground">
-
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:orientation="vertical"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="16dp"
                         android:background="#FFFFFF">
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🛒" android:textSize="48sp"/>
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Buy Crops / पिके खरेदी करा" android:textStyle="bold" android:textColor="#2E7D32" android:textSize="20sp"/>
+                        <LinearLayout android:layout_width="48dp" android:layout_height="48dp" android:background="#E3F2FD" android:gravity="center">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🛒" android:textSize="24sp" />
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:layout_marginStart="14dp">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Buy Crops / खरेदी करा" android:textStyle="bold" android:textColor="#1565C0" android:textSize="15sp" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Browse available crops from farmers" android:textSize="12sp" android:textColor="#888888" android:layout_marginTop="2dp" />
+                        </LinearLayout>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="›" android:textSize="22sp" android:textColor="#CCCCCC" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/btnBuyBulk"
+                    android:layout_width="match_parent"
+                    android:layout_height="88dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="2dp"
+                    android:layout_marginBottom="10dp"
+                    android:foreground="?attr/selectableItemBackground">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="16dp"
+                        android:background="#FFFFFF">
+                        <LinearLayout android:layout_width="48dp" android:layout_height="48dp" android:background="#FFF3E0" android:gravity="center">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="📦" android:textSize="24sp" />
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:layout_marginStart="14dp">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Buy in Bulk (500kg+)" android:textStyle="bold" android:textColor="#E65100" android:textSize="15sp" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="मोठ्या प्रमाणात खरेदी करा" android:textColor="#888888" android:textSize="12sp" android:layout_marginTop="2dp" />
+                        </LinearLayout>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="›" android:textSize="22sp" android:textColor="#CCCCCC" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Tip banner -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#FFF8E1"
+                    android:padding="14dp"
+                    android:layout_marginBottom="20dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="💡" android:textSize="18sp" android:layout_marginEnd="10dp" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Orders above 500kg qualify for additional discounts!"
+                        android:textColor="#5D4037"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+                <!-- Section: Market Intelligence -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Market Intelligence / बाजार माहिती"
-                    android:textColor="#333333"
-                    android:textSize="18sp"
+                    android:text="MARKET INTELLIGENCE"
+                    android:textSize="11sp"
+                    android:textColor="#888888"
                     android:textStyle="bold"
-                    android:layout_marginBottom="12dp"/>
+                    android:letterSpacing="0.12"
+                    android:layout_marginBottom="10dp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:weightSum="3">
+                    android:weightSum="3"
+                    android:layout_marginBottom="20dp">
 
                     <LinearLayout
                         android:id="@+id/btnBuyerDemand"
                         android:layout_width="0dp"
-                        android:layout_height="110dp"
+                        android:layout_height="100dp"
                         android:layout_weight="1"
-                        android:layout_margin="4dp"
-                        android:background="@android:color/white"
-                        android:elevation="2dp"
+                        android:layout_marginEnd="6dp"
+                        android:background="#FFFFFF"
+                        android:elevation="1dp"
                         android:gravity="center"
                         android:clickable="true"
                         android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground"
                         android:orientation="vertical">
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="📊" android:textSize="28sp"/>
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Demand" android:textStyle="bold" android:textSize="11sp"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="📊" android:textSize="28sp" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Demand" android:textStyle="bold" android:textSize="12sp" android:textColor="#333333" android:layout_marginTop="4dp" />
                     </LinearLayout>
 
                     <LinearLayout
                         android:id="@+id/btnBuyerPrice"
                         android:layout_width="0dp"
-                        android:layout_height="110dp"
+                        android:layout_height="100dp"
                         android:layout_weight="1"
-                        android:layout_margin="4dp"
-                        android:background="@android:color/white"
-                        android:elevation="2dp"
+                        android:layout_marginEnd="6dp"
+                        android:background="#FFFFFF"
+                        android:elevation="1dp"
                         android:gravity="center"
                         android:clickable="true"
                         android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground"
                         android:orientation="vertical">
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="💰" android:textSize="28sp"/>
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Price" android:textStyle="bold" android:textSize="11sp"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="💰" android:textSize="28sp" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Price" android:textStyle="bold" android:textSize="12sp" android:textColor="#333333" android:layout_marginTop="4dp" />
                     </LinearLayout>
 
                     <LinearLayout
                         android:id="@+id/btnFraudDetect"
                         android:layout_width="0dp"
-                        android:layout_height="110dp"
+                        android:layout_height="100dp"
                         android:layout_weight="1"
-                        android:layout_margin="4dp"
-                        android:background="@android:color/white"
-                        android:elevation="2dp"
+                        android:background="#FFFFFF"
+                        android:elevation="1dp"
                         android:gravity="center"
                         android:clickable="true"
                         android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground"
                         android:orientation="vertical">
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🛡️" android:textSize="28sp"/>
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Fraud Detection" android:textStyle="bold" android:textSize="10sp" android:gravity="center"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🛡️" android:textSize="28sp" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Fraud Check" android:textStyle="bold" android:textSize="11sp" android:textColor="#333333" android:gravity="center" android:layout_marginTop="4dp" />
                     </LinearLayout>
+
                 </LinearLayout>
+
+                <!-- Track Package Button -->
+                <Button
+                    android:id="@+id/btnTrackPackage"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text="Track Your Package"
+                    android:textSize="16sp"
+                    android:textColor="#FFFFFF"
+                    android:backgroundTint="#2196F3"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="16dp" />
 
             </LinearLayout>
         </ScrollView>
     </LinearLayout>
 
+    <!-- Chatbot Button (Floating Action Button style) -->
     <ImageButton
         android:id="@+id/btnChatbotCorner"
-        android:layout_width="65dp"
-        android:layout_height="65dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:layout_margin="24dp"
-        android:background="@android:drawable/btn_default"
-        android:backgroundTint="#2E7D32"
-        android:elevation="12dp"
-        android:padding="12dp"
+        android:layout_margin="20dp"
+        android:background="@drawable/ic_launcher_background"
+        android:backgroundTint="#1565C0"
+        android:elevation="8dp"
+        android:padding="14dp"
         android:scaleType="centerInside"
-        android:src="@android:drawable/stat_notify_chat"
-        app:tint="#FFFFFF" />
+        android:src="@android:drawable/ic_dialog_info"
+        android:contentDescription="Chatbot" />
+
+    <Button
+        android:id="@+id/btnBookTransport"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="🚚 Book Transport"
+        android:backgroundTint="#1565C0"
+        android:textColor="#FFFFFF"
+        android:layout_margin="8dp"
+        android:padding="12dp"/>
 
 </RelativeLayout>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="30dp"
+    android:background="#FFFFFF">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="✅"
+        android:textSize="80sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Order Placed!"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:textColor="#27ae60"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your transport is booked and the farmer has been notified."
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:textColor="#7f8c8d"/>
+
+    <Button
+        android:id="@+id/btnBackToHome"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginTop="40dp"
+        android:text="Back to Home"
+        android:backgroundTint="#2d3436"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        app:cornerRadius="10dp"/>
+
+</LinearLayout>

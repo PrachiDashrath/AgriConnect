@@ -7,9 +7,9 @@ import android.view.ViewGroup;
 import android.widget.*;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.*;
 import java.util.List;
+import com.example.agriconnect.MarketPrice; // Ensure correct import
 
 public class InspectorAdapter extends RecyclerView.Adapter<InspectorAdapter.InspectorViewHolder> {
 
@@ -35,7 +35,8 @@ public class InspectorAdapter extends RecyclerView.Adapter<InspectorAdapter.Insp
         holder.tvCropName.setText(crop.getCropName());
 
         String[] grades = {"Grade A+", "Grade A", "Grade B", "Grade C"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(context, android.R.layout.simple_spinner_dropdown_item, grades);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(context,
+                android.R.layout.simple_spinner_dropdown_item, grades);
         holder.spinnerGrade.setAdapter(adapter);
 
         holder.btnAccept.setOnClickListener(v -> {
@@ -45,44 +46,48 @@ public class InspectorAdapter extends RecyclerView.Adapter<InspectorAdapter.Insp
                 Toast.makeText(context, "Feedback is required", Toast.LENGTH_SHORT).show();
                 return;
             }
-            processAction(crop, "approved", selectedGrade, feedback);
+            // Use the reliable approval logic
+            approveCrop(crop, selectedGrade, feedback);
         });
 
         holder.btnReject.setOnClickListener(v -> {
-            String feedback = holder.etFeedback.getText().toString().trim();
-            if (feedback.isEmpty()) {
-                Toast.makeText(context, "Please explain the rejection", Toast.LENGTH_SHORT).show();
-                return;
-            }
-            processAction(crop, "rejected", "N/A", feedback);
+            DatabaseReference db = FirebaseDatabase.getInstance(DB_URL).getReference();
+            // Reliable rejection logic from your old code
+            db.child("pending_crops").child(crop.getCropId()).removeValue()
+                    .addOnSuccessListener(aVoid -> {
+                        updateUI(crop);
+                        Toast.makeText(context, "Crop Rejected", Toast.LENGTH_SHORT).show();
+                    });
         });
     }
 
-    private void processAction(Crop crop, String status, String grade, String feedback) {
+    private void approveCrop(Crop crop, String grade, String feedback) {
         DatabaseReference db = FirebaseDatabase.getInstance(DB_URL).getReference();
 
-        if (status.equals("approved")) {
-            // Construct the object with all fields including grade and feedback
-            MarketPrice marketItem = new MarketPrice(
-                    crop.getCropName(),
-                    crop.getPrice(),
-                    crop.getLocation(),
-                    crop.getCategory(),
-                    crop.getQuantity(),
-                    grade,          // <--- Ensuring this is passed
-                    feedback,       // <--- Ensuring this is passed
-                    crop.getFarmerName(),
-                    crop.getFarmerPhone()
-            );
+        // ✅ THE FIX: Use the data already inside the 'Crop' object
+        // We don't need to search the 'farmers' table and risk the "Not Found" error
+        MarketPrice marketItem = new MarketPrice(
+                crop.getCropName(),
+                crop.getPrice(),
+                crop.getLocation(),
+                crop.getCategory(),
+                crop.getQuantity(),
+                grade,
+                feedback,
+                crop.getFarmerName()
+        );
 
-            // Save to market_prices
-            db.child("market_prices").child(crop.getCropId()).setValue(marketItem)
-                    .addOnSuccessListener(aVoid -> {
-                        db.child("pending_crops").child(crop.getCropId()).removeValue();
-                        updateUI(crop);
-                        Toast.makeText(context, "Crop Listed with Grade!", Toast.LENGTH_SHORT).show();
-                    });
-        }
+        // Save directly to market_prices using the CropId as the key
+        db.child("market_prices").child(crop.getCropId()).setValue(marketItem)
+                .addOnSuccessListener(aVoid -> {
+                    // Remove from pending once saved to marketplace
+                    db.child("pending_crops").child(crop.getCropId()).removeValue();
+                    updateUI(crop);
+                    Toast.makeText(context, "Approved & Listed in Marketplace!", Toast.LENGTH_SHORT).show();
+                })
+                .addOnFailureListener(e -> {
+                    Toast.makeText(context, "Error: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                });
     }
 
     private void updateUI(Crop crop) {
@@ -97,7 +102,11 @@ public class InspectorAdapter extends RecyclerView.Adapter<InspectorAdapter.Insp
     public int getItemCount() { return cropList.size(); }
 
     static class InspectorViewHolder extends RecyclerView.ViewHolder {
-        TextView tvCropName; Spinner spinnerGrade; EditText etFeedback; Button btnAccept, btnReject;
+        TextView tvCropName;
+        Spinner spinnerGrade;
+        EditText etFeedback;
+        Button btnAccept, btnReject;
+
         public InspectorViewHolder(@NonNull View itemView) {
             super(itemView);
             tvCropName = itemView.findViewById(R.id.tvCropName);

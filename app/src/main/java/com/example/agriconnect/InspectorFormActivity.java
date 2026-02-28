@@ -22,7 +22,7 @@ import java.util.Map;
 public class InspectorFormActivity extends AppCompatActivity {
 
     private EditText etName, etContact, etCity;
-    private ImageButton btnMicInspName, btnMicInspCity;
+    private ImageButton btnMicInspName, btnMicInspCity, btnBack; // Added btnBack
     private Button btnSubmit;
     private ProgressBar progressBar;
     private final String DB_URL = "https://agriconnect-5cd4a-default-rtdb.asia-southeast1.firebasedatabase.app/";
@@ -37,9 +37,17 @@ public class InspectorFormActivity extends AppCompatActivity {
         etCity = findViewById(R.id.etInspectorCity);
         btnSubmit = findViewById(R.id.btnSubmitInspector);
         progressBar = findViewById(R.id.progressBar);
+        btnBack = findViewById(R.id.btnBack); // Initialize Back Button
 
         btnMicInspName = findViewById(R.id.btnMicName);
         btnMicInspCity = findViewById(R.id.btnMicCity);
+
+        // Back Button Listener
+        btnBack.setOnClickListener(v -> {
+            Intent intent = new Intent(InspectorFormActivity.this, UserSelectionActivity.class);
+            startActivity(intent);
+            finish();
+        });
 
         btnMicInspName.setOnClickListener(v -> startVoiceInput(101));
         btnMicInspCity.setOnClickListener(v -> startVoiceInput(102));
@@ -69,8 +77,9 @@ public class InspectorFormActivity extends AppCompatActivity {
     private void submitForm() {
         String name = etName.getText().toString().trim();
         String city = etCity.getText().toString().trim();
+        String contact = etContact.getText().toString().trim();
 
-        if (name.isEmpty() || city.isEmpty()) {
+        if (name.isEmpty() || city.isEmpty() || contact.isEmpty()) {
             Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show();
             return;
         }
@@ -82,6 +91,7 @@ public class InspectorFormActivity extends AppCompatActivity {
         Map<String, Object> data = new HashMap<>();
         data.put("uid", uid);
         data.put("name", name);
+        data.put("contact", contact);
         data.put("location", city.toLowerCase());
         data.put("userType", "Inspector");
 
@@ -95,6 +105,7 @@ public class InspectorFormActivity extends AppCompatActivity {
             } else {
                 progressBar.setVisibility(View.GONE);
                 btnSubmit.setEnabled(true);
+                Toast.makeText(InspectorFormActivity.this, "Failed to register", Toast.LENGTH_SHORT).show();
             }
         });
     }

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F1F8E9"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp"
+                android:background="#FFFFFF">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ऑर्डर सारांश / ऑर्डर सारांश"
+                    android:textColor="#2E7D32"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ORDER SUMMARY"
+                    android:textColor="#1B5E20"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.1"/>
+
+                <TextView
+                    android:id="@+id/tvBillTotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="₹ 0.00"
+                    android:textColor="#212121"
+                    android:textSize="36sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="8dp"/>
+
+                <View
+                    android:layout_width="60dp"
+                    android:layout_height="4dp"
+                    android:background="#2E7D32"
+                    android:layout_marginTop="12dp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="3dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp"
+                android:background="#FFFFFF">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="किंमत तपशील / कीमत विवरण / PRICE DETAILS"
+                    android:textColor="#78909C"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="20dp"/>
+
+                <TextView
+                    android:id="@+id/tvBillDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="12dp"
+                    android:text="Item Name ................... ₹000\nTax (5%) ......................... ₹00\nDelivery ........................ ₹00"
+                    android:textSize="15sp"
+                    android:textColor="#37474F"
+                    android:fontFamily="monospace"
+                    android:background="#F9FBE7"
+                    android:padding="16dp"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#ECEFF1"
+                    android:layout_marginVertical="24dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="सुरक्षित पेमेंट / सुरक्षित भुगतान"
+                        android:textColor="#2E7D32"
+                        android:textStyle="bold"
+                        android:textSize="12sp"
+                        android:layout_marginBottom="4dp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="100% Secure &amp; Authentic Payments"
+                        android:textColor="#90A4AE"
+                        android:textSize="11sp"
+                        android:gravity="center"
+                        android:drawableStart="@android:drawable/ic_lock_idle_lock"
+                        android:drawablePadding="8dp"
+                        app:drawableTint="#2E7D32"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="32dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnPayNow"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:text="पैसे द्या / भुगतान करें\nPAY NOW"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:layout_marginEnd="8dp"
+                app:backgroundTint="#2E7D32"
+                app:cornerRadius="12dp"
+                app:elevation="6dp"
+                android:lineSpacingExtra="2dp"
+                android:textAllCaps="false"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAddTransport"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:text="वाहतूक जोडा / परिवहन जोड़ें\nADD TRANSPORT"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:layout_marginStart="8dp"
+                app:backgroundTint="#FF8F00"
+                app:cornerRadius="12dp"
+                app:elevation="6dp"
+                android:textColor="#FFFFFF"
+                android:lineSpacingExtra="2dp"
+                android:textAllCaps="false"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

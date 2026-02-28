@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F0F4F8"> <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#0D47A1"
+    android:paddingTop="12dp"
+    android:paddingBottom="16dp"
+    android:paddingHorizontal="16dp"
+    android:orientation="horizontal"
+    android:elevation="8dp"
+    android:gravity="center_vertical">
+
+    <ImageButton
+        android:id="@+id/btnBack"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@android:drawable/ic_menu_revert"
+        app:tint="#FFFFFF"/>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Track Package"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="पॅकेज ट्रॅक करा · पैकेज ट्रैक करें"
+            android:textColor="#BBDEFB"
+            android:textSize="11sp"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="44dp"
+        android:layout_height="44dp"/>
+</LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingBottom="24dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:layout_marginBottom="20dp"
+                android:indeterminateTint="#0D47A1"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="#FFFFFF"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="ट्रॅकिंग स्थिती / ट्रैकिंग स्थिति / STATUS"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:textColor="#0D47A1"
+                        android:letterSpacing="0.05"
+                        android:layout_marginBottom="16dp"/>
+
+                    <TextView
+                        android:id="@+id/tvBookingId"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Booking ID: --"
+                        android:textSize="13sp"
+                        android:textColor="#607D8B"
+                        android:layout_marginBottom="10dp"/>
+
+                    <TextView
+                        android:id="@+id/tvStatus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Status: Loading..."
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        android:textColor="#1565C0"
+                        android:layout_marginBottom="6dp"
+                        android:drawableStart="@android:drawable/presence_online"
+                        android:drawablePadding="12dp"
+                        app:drawableTint="#1E88E5"/>
+
+                    <TextView
+                        android:id="@+id/tvDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Date: --"
+                        android:textSize="14sp"
+                        android:textColor="#78909C"
+                        android:layout_marginStart="32dp"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="3dp"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="प्रवासाचा तपशील / यात्रा विवरण / TRIP"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:textColor="#0D47A1"
+                        android:layout_marginBottom="16dp"/>
+
+                    <TextView
+                        android:id="@+id/tvTransporterName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Transporter: --"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="#37474F"
+                        android:layout_marginBottom="12dp"
+                        android:drawableStart="@android:drawable/ic_menu_directions"
+                        android:drawablePadding="12dp"
+                        app:drawableTint="#546E7A"/>
+
+                    <TextView
+                        android:id="@+id/tvCustomerName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Customer: --"
+                        android:textSize="14sp"
+                        android:textColor="#455A64"
+                        android:layout_marginBottom="12dp"
+                        android:drawableStart="@android:drawable/ic_menu_myplaces"
+                        android:drawablePadding="12dp"
+                        app:drawableTint="#546E7A"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#ECEFF1"
+                        android:layout_marginBottom="16dp"/>
+
+                    <TextView
+                        android:id="@+id/tvPickup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="From: --"
+                        android:textSize="14sp"
+                        android:textColor="#263238"
+                        android:layout_marginBottom="10dp"
+                        android:textStyle="italic"/>
+
+                    <TextView
+                        android:id="@+id/tvDestination"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="To: --"
+                        android:textSize="14sp"
+                        android:textColor="#263238"
+                        android:layout_marginBottom="14dp"
+                        android:textStyle="italic"/>
+
+                    <TextView
+                        android:id="@+id/tvDistance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Distance: --"
+                        android:textSize="16sp"
+                        android:paddingHorizontal="16dp"
+                        android:paddingVertical="8dp"
+                        android:background="#E1F5FE"
+                        android:textColor="#0277BD"
+                        android:textStyle="bold"
+                        android:layout_gravity="end"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

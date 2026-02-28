@@ -1,34 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Enhanced Scheme Card Item - All IDs preserved -->
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp"
+    android:layout_marginStart="4dp"
+    android:layout_marginEnd="4dp"
+    android:layout_marginBottom="12dp"
+    android:layout_marginTop="4dp"
     app:cardCornerRadius="16dp"
-    app:cardElevation="6dp">
+    app:cardElevation="3dp"
+    app:cardBackgroundColor="#FFFFFF">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="16dp">
+        android:padding="0dp">
 
-        <TextView
-            android:id="@+id/tvSchemeName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Scheme Name"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:textColor="@color/primary"/>
+        <!-- Top accent bar -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:background="#2E7D32"/>
 
-        <TextView
-            android:id="@+id/tvSchemeDesc"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Short description of scheme"
-            android:textSize="14sp"
-            android:textColor="@color/secondary"
-            android:layout_marginTop="4dp"/>
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:gravity="center_vertical">
+
+            <!-- Icon circle -->
+            <FrameLayout
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="#E8F5E9">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="📋"
+                    android:textSize="22sp"/>
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="300dp"
+                android:layout_height="53dp"
+                android:layout_marginStart="14dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvSchemeName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:letterSpacing="0.01"
+                    android:text="Scheme Name"
+                    android:textColor="#1B5E20"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvSchemeDesc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:lineSpacingExtra="2dp"
+                    android:text="Short description of scheme"
+                    android:textColor="#757575"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <!-- Arrow indicator -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="›"
+                android:textSize="26sp"
+                android:textColor="#A5D6A7"
+                android:layout_marginStart="8dp"/>
+        </LinearLayout>
+
     </LinearLayout>
 </androidx.cardview.widget.CardView>

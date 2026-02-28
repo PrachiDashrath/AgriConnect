@@ -1,38 +1,159 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="24dp"
-    android:gravity="center">
+    android:background="#F8FAF8"
+    android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/loginEmail"
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:background="#2E7D32"
+        android:padding="32dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🌱"
+                android:textSize="48sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="AgriConnect"
+                android:textColor="#FFFFFF"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.02"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Connecting Farmers &amp; Buyers"
+                android:textColor="#C8E6C9"
+                android:textSize="14sp"
+                android:alpha="0.9" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Email"
-        android:inputType="textEmailAddress"/>
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="-40dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="12dp"
+        app:cardBackgroundColor="#FFFFFF">
 
-    <EditText
-        android:id="@+id/loginPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Password"
-        android:inputType="textPassword"
-        android:layout_marginTop="12dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="28dp">
 
-    <Button
-        android:id="@+id/loginBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Login"
-        android:layout_marginTop="20dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="WELCOME BACK"
+                android:textColor="#757575"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.1"
+                android:layout_marginBottom="24dp"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilLoginEmail"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:hint="          Email Address"
+                app:boxStrokeColor="#2E7D32"
+                app:hintTextColor="#2E7D32"
+                app:startIconDrawable="@android:drawable/ic_dialog_email"
+                app:startIconTint="#2E7D32">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etLoginEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress"
+                    android:textColor="#2D3436"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilLoginPassword"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:hint="          Password"
+                app:passwordToggleEnabled="true"
+                app:boxStrokeColor="#2E7D32"
+                app:hintTextColor="#2E7D32"
+                app:startIconDrawable="@android:drawable/ic_lock_idle_lock"
+                app:startIconTint="#2E7D32">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etLoginPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:textColor="#2D3436"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/btnLogin"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="LOGIN"
+                android:textAllCaps="true"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:backgroundTint="#2E7D32"
+                app:cornerRadius="12dp"
+                app:elevation="4dp" />
+
+            <ProgressBar
+                android:id="@+id/loginProgressBar"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:indeterminateTint="#2E7D32"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tvRegisterRedirect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="24dp"
+                android:text="New user? Create an account"
+                android:textColor="#2E7D32"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:padding="8dp"/>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
     <TextView
-        android:id="@+id/goToRegister"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="New user? Register here"
-        android:textColor="@android:color/holo_blue_dark"
-        android:layout_marginTop="16dp"/>
+        android:gravity="center"
+        android:layout_marginTop="32dp"
+        android:text="Secured by Firebase Authentication"
+        android:textColor="#95A5A6"
+        android:textSize="11sp"/>
+
 </LinearLayout>
